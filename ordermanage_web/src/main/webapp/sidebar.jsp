@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -15,7 +15,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">菜单</li>
-            <li id="admin-index"><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> <span>首页</span></a>
+            <li id="admin-index"><a href="${pageContext.request.contextPath}/main.jsp"><i class="fa fa-dashboard"></i><span>首页</span></a>
             </li>
             <%-- 系统管理 --%>
             <li class="treeview">
@@ -58,7 +58,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li id="order-manage">
-                        <a href="all-order-manage-list.html">
+                        <a href="${pageContext.request.contextPath}/product/all">
                             <i class="fa fa-circle-o"></i>产品管理
                         </a>
                     </li>

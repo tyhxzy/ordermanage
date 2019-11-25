@@ -41,14 +41,19 @@
           href="${pageContext.request.contextPath}/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
 </head>
 
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 
 <div class="wrapper">
 
     <!-- 页面头部 -->
-    <jsp:include page="header.jsp"></jsp:include>
+    <header class="main-header">
+        <jsp:include page="header.jsp"></jsp:include>
+    </header>
+
     <!-- 导航侧栏 -->
-    <jsp:include page="sidebar.jsp"></jsp:include>
+    <aside class="main-sidebar">
+        <jsp:include page="sidebar.jsp"></jsp:include>
+    </aside>
 
     <!-- 内容区域 -->
     <div class="content-wrapper">
@@ -56,8 +61,11 @@
     </div>
     <!-- 内容区域 /-->
 
-    <!-- 底部导航 -->
-    <jsp:include page="footer.jsp"></jsp:include>
+    <!-- 页脚-->
+    <footer class="main-footer">
+        <jsp:include page="footer.jsp"></jsp:include>
+    </footer>
+
 </div>
 
 
