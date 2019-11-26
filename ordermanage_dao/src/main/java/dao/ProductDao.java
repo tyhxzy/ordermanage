@@ -12,6 +12,9 @@ public interface ProductDao {
     @Select("select * from product")
     List<Product> allProduct();
 
+    @Select("select * from product where id = #{id}")
+    Product findById(String id);
+
     @Insert("insert into product values(#{id},#{productNum},#{productName},#{cityName},#{departureTime},#{productPrice},#{productDesc},#{productStatus})")
     void addProduct(Product product);
 }

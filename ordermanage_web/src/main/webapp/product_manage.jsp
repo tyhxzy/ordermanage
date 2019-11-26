@@ -138,7 +138,6 @@
                                     <td>￥${product.productPrice}</td>
                                     <td>${product.productDesc}</td>
                                     <td>${product.productStatusStr}</td>
-                                    <td>已付款(待出行)</td>
                                     <td class="text-center">
                                         <button type="button" class="btn bg-olive btn-xs"
                                                 onclick='location.href="all-order-manage-edit.html"'>订单
