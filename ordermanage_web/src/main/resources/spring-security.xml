@@ -28,6 +28,7 @@
                              default-target-url="/main.jsp"/>
         <!-- 关闭跨域请求 -->
         <security:csrf disabled="true"/>
+        <security:logout invalidate-session="true" logout-url="/logout" logout-success-url="/login.jsp"></security:logout>
     </security:http>
 
 
