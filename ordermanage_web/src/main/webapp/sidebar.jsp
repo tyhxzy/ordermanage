@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -8,7 +9,7 @@
                 <img src="${pageContext.request.contextPath}/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>张三</p>
+                <p><security:authentication property="principal.username"/></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
             </div>
         </div>
@@ -26,23 +27,25 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li id="user-setting">
-                        <a href="all-system-setting-edit.html">
-                            <i class="fa fa-circle-o"></i>用户管理
-                        </a>
-                    </li>
+                    <security:authorize access="hasRole('ROLE_ADMIN')">
+                        <li id="user-setting">
+                            <a href="${pageContext.request.contextPath}/user/all">
+                                <i class="fa fa-circle-o"></i>用户管理
+                            </a>
+                        </li>
+                    </security:authorize>
                     <li id="role-setting">
-                        <a href="all-system-setting-edit.html">
+                        <a href="${pageContext.request.contextPath}/role/all">
                             <i class="fa fa-circle-o"></i>角色管理
                         </a>
                     </li>
                     <li id="resource-setting">
-                        <a href="all-system-setting-edit.html">
+                        <a href="${pageContext.request.contextPath}/permission/all">
                             <i class="fa fa-circle-o"></i>资源权限管理
                         </a>
                     </li>
                     <li id="log-setting">
-                        <a href="all-system-setting-edit.html">
+                        <a href="${pageContext.request.contextPath}/log/all">
                             <i class="fa fa-circle-o"></i>日志管理
                         </a>
                     </li>
